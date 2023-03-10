@@ -3,19 +3,32 @@ body {
     background-color:rgb(255, 228, 196);
     margin:10vh 20vh;
 }
+h1, h2, span {
+    font-family: 'Roboto', sans-serif;
+}
 .content:hover {
-    display:inline-block;
     color:blue;
     }
+.memeContainer{
+    display:flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content:space-between;
+}
 h2 {
     display:inline-block;
 }
 .cross {
     display:none;
 }
-h2:hover .cross{
-    display:inline;
+.content:hover .cross{
+    display:inline-flex;
 }
 .meme {
     display:none;
+    min-width: 100%;
+    justify-content: center;
+}
+.memeContainer:hover .meme{
+    display:block;
 }
