@@ -1,0 +1,21 @@
+body {
+    min-height: 100vh;
+    background-color:rgb(255, 228, 196);
+    margin:10vh 20vh;
+}
+.content:hover {
+    display:inline-block;
+    color:blue;
+    }
+h2 {
+    display:inline-block;
+}
+.cross {
+    display:none;
+}
+h2:hover .cross{
+    display:inline;
+}
+.meme {
+    display:none;
+}
