@@ -1,44 +1,55 @@
 body {
     box-sizing: border-box;
-    background-color:rgb(255, 228, 196);
+    background-color:rgb(77, 77, 77);
     width: 100vw;
     margin: 0;
     padding: 5% 20%;
     align-content: center;
 }
-h1, h2, span {
+h1, label, span {
     font-family: 'Roboto', sans-serif;
 }
-h2 {
+label {
     display: inline-block;
-    color:blue;
+    color:rgb(148, 148, 148);
+    font-size: x-large;
+    flex-grow: 10;
+    padding: 10px 0;
 }
-.content:hover h2{
+span {
+    font-size: x-large;
+}
+.content:hover label{
     color:black;
     }
 .memeContainer{
-    position: relative;
+    /*position: relative;*/
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid grey;
 }
-
-.cross {
+.cross, .plus {
     display: none;
 }
-.content:hover .cross{
+.content:hover .plus{
+    display: inline-flex;
+}
+.memeContainer:hover .plus{
+    display: none;
+}
+.memeContainer:hover .cross{
     display: inline-flex;
 }
 .meme {
     display: none;
-    justify-content: center;
     width: 100%;
+    text-align: center;
 }
 .memeContainer:hover .meme{
-    display:block;
-}
+    display: block;
+    }
 /*.meme:not(:target){
     display:none;
     height:655px;
@@ -49,9 +60,14 @@ h2 {
 }*/
 input {
     appearance: none;
-    /*width: 0px;*/
-    position: absolute;
+    /*width: 0px;
+    position: absolute;*/
+    display: flexbox;
+    margin: 0;
 }
 input:checked ~ .meme{
     display: block;
+}
+input:checked label {
+    color:black;
 }
