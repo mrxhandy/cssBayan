@@ -43,13 +43,25 @@ span {
     display: inline-flex;
 }
 .meme {
-    display: none;
+    height: 0px;
+    overflow: hidden;
+    /*display: none;*/
     width: 100%;
     text-align: center;
 }
 .memeContainer:hover .meme{
-    display: block;
+    height: 670px;
+    /*display: block;*/
+    animation: slide-down 0.3s;
     }
+@keyframes slide-down {
+    0% {
+        height: 0px;
+    }
+    100% {
+        height: 650px;
+    }
+}
 /*.meme:not(:target){
     display:none;
     height:655px;
@@ -65,9 +77,16 @@ input {
     display: flexbox;
     margin: 0;
 }
-input:checked ~ .meme{
-    display: block;
+input:checked ~ .meme {
+   /*display: block;*/
+   height: 670px;
 }
-input:checked label {
+input:checked + label {
     color:black;
+}
+input:checked ~ .cross {
+    display: inline-flex;
+}
+input:checked ~ .plus {
+    display: none;
 }
