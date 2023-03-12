@@ -6,87 +6,64 @@ body {
     padding: 5% 20%;
     align-content: center;
 }
-h1, label, span {
+@media only screen and (max-width: 1100px) {
+    body {
+        padding: 5% 5%;
+    }
+}
+h1, span, a, div {
     font-family: 'Roboto', sans-serif;
 }
-label {
-    display: inline-block;
-    color:rgb(148, 148, 148);
-    font-size: x-large;
-    flex-grow: 10;
-    padding: 10px 0;
+img {
+    max-width: 100%;
 }
-span {
+a {
+    text-decoration: none;
+    color:rgb(131, 131, 131);
+}
+span, div {
     font-size: x-large;
 }
-.content:hover label{
+.content:hover div {
     color:black;
     }
-.memeContainer{
-    /*position: relative;*/
+.memeContainer {
     display: flex;
     flex-flow: row wrap;
+    height: 1.8rem;
+    text-align: center;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid grey;
 }
-.cross, .plus {
-    display: none;
-}
-.content:hover .plus{
-    display: inline-flex;
-}
-.memeContainer:hover .plus{
-    display: none;
-}
-.memeContainer:hover .cross{
-    display: inline-flex;
-}
 .meme {
-    height: 0px;
-    overflow: hidden;
-    /*display: none;*/
     width: 100%;
+}
+a:hover .memeContainer{
+    height: auto;
+    transition: all 0.3s ease;
+}
+a:target .memeContainer{
+    height: auto;
     text-align: center;
+    color: black;
 }
-.memeContainer:hover .meme{
-    height: 670px;
-    /*display: block;*/
-    animation: slide-down 0.3s;
-    }
-@keyframes slide-down {
-    0% {
-        height: 0px;
-    }
-    100% {
-        height: 650px;
-    }
+.content:not(:hover) .plus, .cross {
+    display: none;
 }
-/*.meme:not(:target){
-    display:none;
-    height:655px;
+a:hover .plus {
+    display: none;
 }
-.meme:target{
-    display:block;
-    height: 655px;
-}*/
-input {
-    appearance: none;
-    /*width: 0px;
-    position: absolute;*/
-    display: flexbox;
-    margin: 0;
-}
-input:checked ~ .meme {
-   /*display: block;*/
-   height: 670px;
-}
-input:checked + label {
-    color:black;
-}
-input:checked ~ .cross {
+a:hover .cross {
     display: inline-flex;
 }
-input:checked ~ .plus {
+a:target .plus {
     display: none;
+}
+a:target .cross {
+    display: inline-flex;
+}
+a:active .memeContainer{
+    color:rgb(131, 131, 131)
 }
