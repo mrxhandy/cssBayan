@@ -8,7 +8,7 @@
     }
     img:hover {
         filter: grayscale(0%);
-        transition: filter 0.5s; 
+        transition: filter 0.4s; 
     }
     span, div {
         font-size: x-large;
